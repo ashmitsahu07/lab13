@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simple Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="row">
+        <span class="brand">Quizzer</span>
+        <span class="pill muted">Beginner → Intermediate JS</span>
+      </div>
+      <div class="row">
+        <button id="resetBtn" title="Restart quiz">↻ Restart</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Quiz area -->
+      <main class="card" aria-live="polite">
+        <div class="q-meta">
+          <div id="qCounter" class="muted">Question 1 / 10</div>
+          <div class="row muted"><span>Time:</span> <strong id="timer">00:00</strong></div>
+        </div>
+        <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+
+        <h2 id="question">Loading…</h2>
+        <form id="optionsForm" class="options" autocomplete="off"></form>
+
+        <div id="explain" class="muted"></div>
+
+        <div class="toolbar">
+          <button id="checkBtn" class="primary">Check</button>
+          <div class="row">
+            <button id="nextBtn">Next ▶</button>
+            <button id="finishBtn" class="hidden primary">Finish</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Sidebar / score -->
+      <aside class="card scorebox">
+        <div class="stat"><span>Score</span><strong id="score">0</strong></div>
+        <div class="stat"><span>Best (this browser)</span><strong id="best">0</strong></div>
+        <div class="stat"><span>Answered</span><strong id="answered">0</strong></div>
+        <div class="stat"><span>Correct</span><strong id="correct">0</strong></div>
+        <div class="stat"><span>Total Questions</span><strong id="total">0</strong></div>
+      </aside>
+    </div>
+
+    <section id="result" class="card hidden" aria-live="polite">
+      <h2>Results</h2>
+      <p class="muted" id="summary">Your summary will appear here.</p>
+      <div class="row">
+        <button id="reviewBtn">Review Answers</button>
+        <button id="playAgainBtn" class="primary">Play Again</button>
+      </div>
+      <div id="review" class="options review"></div>
+    </section>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>
