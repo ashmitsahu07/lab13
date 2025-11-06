@@ -1,3 +1,4 @@
+
 const QUESTION_BANK = [
     {
         text: "Which method adds a new element to the end of an array?",
@@ -43,12 +44,7 @@ const QUESTION_BANK = [
 
 // ====================== Helpers ======================
 const $ = (sel, root = document) => root.querySelector(sel);
-const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
-const storage = {
-    get(k, fb) { try { return JSON.parse(localStorage.getItem(k)) ?? fb; } catch { return fb; } },
-    set(k, v) { localStorage.setItem(k, JSON.stringify(v)); }
-};
-
+const 
 function shuffle(array) {
     // Fisher–Yates
     for (let i = array.length - 1; i > 0; i--) {
